@@ -1,8 +1,9 @@
-public class Solution {
+public class containerwithmaxwater {
     public int maxArea(int[] height) {
         int left = 0;
         int right = height.length - 1;
         int maxArea = 0;
+       
 
         while (left < right) {
             // Calculate the area between the two pointers
@@ -15,7 +16,10 @@ public class Solution {
 
             // Move the pointer pointing to the shorter line
             if (height[left] < height[right]) {
+                
                 left++;
+                
+
             } else {
                 right--;
             }
@@ -25,14 +29,14 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        containerwithmaxwater sol = new containerwithmaxwater();
 
         // Test case 1
         int[] height1 = {1, 8, 6, 2, 5, 4, 8, 3, 7};
         System.out.println(sol.maxArea(height1));  // Output: 49
 
         // Test case 2
-        int[] height2 = {1, 1};
+        int[] height2 = {1,2,3,8,5,6,23,10};
         System.out.println(sol.maxArea(height2));  // Output: 1
     }
 }
